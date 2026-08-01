@@ -1,0 +1,19 @@
+.about {
+  display: grid;
+  gap: 32px;
+}
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 640px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+@media (min-width: 900px) {
+  .about {
+    grid-template-columns: 320px 1fr;
+  }
+}

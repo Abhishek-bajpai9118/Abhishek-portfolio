@@ -1,0 +1,78 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 88px 0 120px;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+}
+
+.hero__graph {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.55;
+  transform: perspective(900px) rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
+  transition: transform 0.3s ease-out;
+  mask-image: radial-gradient(ellipse at 60% 40%, black 40%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse at 60% 40%, black 40%, transparent 78%);
+}
+
+.neural-graph {
+  width: 100%;
+  height: 100%;
+}
+
+.neural-graph__edge {
+  animation: pulse-edge 4.5s ease-in-out infinite;
+}
+
+.neural-graph__node {
+  fill: var(--accent);
+  filter: drop-shadow(0 0 4px rgba(94, 234, 212, 0.7));
+  animation: pulse-node 3.2s ease-in-out infinite;
+}
+
+@keyframes pulse-edge {
+  0%, 100% { stroke-opacity: 0.15; }
+  50% { stroke-opacity: 0.85; }
+}
+
+@keyframes pulse-node {
+  0%, 100% { r: 5; opacity: 0.6; }
+  50% { r: 7; opacity: 1; }
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.hero__title {
+  font-size: clamp(40px, 7vw, 68px);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.hero__tagline {
+  font-size: clamp(16px, 2vw, 19px);
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__graph {
+    transform: none !important;
+  }
+  .neural-graph__edge,
+  .neural-graph__node {
+    animation: none;
+  }
+}

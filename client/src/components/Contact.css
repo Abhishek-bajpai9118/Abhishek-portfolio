@@ -1,0 +1,230 @@
+.contact__heading {
+  color: var(--accent);
+  text-align: center;
+  margin: 0 auto 12px;
+}
+
+.contact__subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 520px;
+  margin: 0 auto 48px;
+  font-size: 15px;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 32px;
+  align-items: start;
+}
+
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.contact-card__header-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--accent-2);
+}
+
+.contact-card__header-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-card__header h3 {
+  font-size: 17px;
+}
+
+.contact-card input,
+.contact-card textarea {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.launch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  color: #06251f;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.launch-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.launch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-2-soft);
+}
+
+.launch-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.contact-form__status {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.contact-form__status--ok {
+  color: var(--accent);
+}
+
+.contact-form__status--err {
+  color: #ff8383;
+}
+
+/* Right side */
+.contact-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.contact-avatar {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, var(--accent-2-soft), transparent 70%);
+  margin-bottom: 12px;
+}
+
+.contact-avatar__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--accent-2);
+  opacity: 0.5;
+  animation: ring-pulse 3s ease-in-out infinite;
+}
+
+@keyframes ring-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.08); opacity: 0.2; }
+}
+
+.contact-avatar__emoji {
+  font-size: 44px;
+}
+
+.contact-side__quote {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 15px;
+  max-width: 320px;
+  margin-bottom: 16px;
+}
+
+.contact-side__title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  transform: translateX(3px);
+}
+
+.contact-link__icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.contact-link__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.icon--email { background: #ec4899; }
+.icon--phone { background: #22c55e; }
+.icon--github { background: #4b5563; }
+.icon--linkedin { background: #3b82f6; }
+
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-avatar__ring {
+    animation: none;
+  }
+}
