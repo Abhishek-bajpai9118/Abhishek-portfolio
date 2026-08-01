@@ -7,12 +7,12 @@ export const profile = {
   tagline:
     "I build software, and I'm rewiring my career toward AI — training models, shipping ML-backed products, and learning in public.",
   location: "India",
-  email: "your.email@example.com",
-  phone: "+91 00000 00000",
+  email: "ab895707@gmail.com",
+  phone: "+91 9118397050",
   resumeUrl: "/resume.pdf",
   socials: {
-    github: "https://github.com/your-username",
-    linkedin: "https://linkedin.com/in/your-username",
+    github: "https://github.com/Abhishek-bajpai9118",
+    linkedin: "https://linkedin.com/in/abhishekbajpai",
     twitter: "",
   },
   about: [
